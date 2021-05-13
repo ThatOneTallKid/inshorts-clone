@@ -13,15 +13,15 @@ import {
   createMuiTheme,
   ThemeProvider,
   useMediaQuery,
-} from "@material-ui/core"; // added
+} from "@material-ui/core"; 
 
 import categories from "../data/category";
 
 const useStyles = makeStyles({
   list: {
-    width: 200, // changed
-    paddingLeft: 10, // changed
-    paddingRight: 5, //changed
+    width: 200,
+    paddingLeft: 10, 
+    paddingRight: 5, 
   },
   fullList: {
     width: "auto",
@@ -34,7 +34,6 @@ export default function SwipeableTemporaryDrawer({ setCategory }) {
     left: false,
   });
 
-  //---------------------------------------------------
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
   const theme = React.useMemo(
@@ -46,7 +45,7 @@ export default function SwipeableTemporaryDrawer({ setCategory }) {
       }),
     [prefersDarkMode]
   );
-  //----------------------------------------------------
+
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -91,10 +90,8 @@ export default function SwipeableTemporaryDrawer({ setCategory }) {
   return (
     <div>
       <Button onClick={toggleDrawer("left", true)}>
-        {/* added icon */}
         <MenuIcon />
       </Button>
-      {/* added */}
       <ThemeProvider theme={theme}>
         <SwipeableDrawer
           anchor={"left"}

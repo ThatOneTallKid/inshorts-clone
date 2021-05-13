@@ -10,13 +10,9 @@ const NewsContent = ({ newsArray, loadMore, setLoadMore, newsResults }) => {
       <Container maxWidth="md">
         <div className="content">
           
-  
-          
           {newsArray.map((newsItem) => (
-            <NewsCard newsItem={newsItem} key={newsItem.title} />
+            <NewsCard newsItem={newsItem} key={newsItem.headline} />
           ))}
-  
-          
           {loadMore <= newsResults && (
             <>
               <hr />

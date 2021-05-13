@@ -19,6 +19,7 @@ export default class Dashboard extends Component {
     this.onChangeAuthor = this.onChangeAuthor.bind(this);
     this.onChangePublishedAt = this.onChangePublishedAt.bind(this);
     this.onChangeUrl = this.onChangeUrl.bind(this);
+    this.onChangeUrltoImage = this.onChangeUrltoImage.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.saveDetails = this.saveDetails.bind(this);
     this.newDetails = this.newDetails.bind(this);
@@ -29,6 +30,7 @@ export default class Dashboard extends Component {
       author: "",
       publishedAt: "",
       url: "",
+      urlToImage: "",
       description: "",
     };
   }
@@ -60,6 +62,12 @@ export default class Dashboard extends Component {
   onChangeDescription(e) {
     this.setState({
         description: e.target.value,
+    });
+  }
+
+  onChangeUrltoImage(e) {
+    this.setState({
+      urlToImage: e.target.value,
     });
   }
 
@@ -95,75 +103,79 @@ export default class Dashboard extends Component {
       author: "",
       publishedAt: "",
       url: "",
+      urlToImage: "",
       description: "",
     });
   }
 
   render() {
     return (
-      <div className = "Dashboard">
-      <div className="nav">
-<div className="menu">
+  <div className = "Dashboard">
+  <div className="nav">
+  <div className="menu">
   
-</div>
-
-<img
-  style={{ cursor: "pointer" }}
-  src="https://assets.inshorts.com/website_assets/images/logo_inshorts.png"
-  height="80%"
-  alt="logo"
-/>
-
-
-          <div className="signup" onClick={handleLogout}>
+  </div>
   
-<Button variant="contained" color="primary">
-      log out
-</Button>
+  <img
+    style={{ cursor: "pointer" }}
+    src="https://assets.inshorts.com/website_assets/images/logo_inshorts.png"
+    height="80%"
+    alt="logo"        
+  />
     
-
-</div>
-      </div>
-      <div className="form" >
+    <div className="signup" onClick={handleLogout}>
+      <Button variant="contained" color="primary">
+          log out
+      </Button>
+    </div>
+  </div>
+<div className="form" >
           
-      <div className="card" >
-<div className="card-body">
-        <form onSubmit={this.saveDetails}>
+  <div className="card" >
+    <div className="card-body">
+      <form onSubmit={this.saveDetails}>
+          
+            <h2>Enter News Details</h2>
           
 
+            <div className="mb-3">
+                  <label htmlFor="headline" className="form-label" >Headline</label>
+                  <input type="text" name= "headline" className="form-control" value={this.state.headline} onChange={this.onChangeHeadline} id="headline" required/>
+            </div>
+
+            <div className="mb-3">
+                  <label htmlFor="author" className="form-label">Author</label>
+                  <input type="text" name= "author" className="form-control" value={this.state.author} onChange={this.onChangeAuthor} id="author" required/>
+            </div>
           
+            <div className="mb-3">
+                  <label htmlFor="publishedAt" className="form-label">Published-At</label>
+                  <input type="text" name= "publishedAt" className="form-control" value={this.state.publishedAt} onChange={this.onChangePublishedAt}  id="publishedAt" required/>
+            </div>
+                
+            <div className="mb-3">
+                  <label htmlFor="url" className="form-label">Url</label>
+                  <input type="text" name= "url" className="form-control" value={this.state.url} onChange={this.onChangeUrl}  id="url" required/>
+            </div>
+                
+            <div className="mb-3">
+                  <label htmlFor="url" className="form-label">ImageUrl</label>
+                  <input type="text" name= "url" className="form-control" value={this.state.urlToImage} onChange={this.onChangeUrltoImage}  id="urlToImage" required/>
+            </div>
+                
+            <div className="mb-3">
+                  <label htmlFor="description" className="form-label">Description</label>
+                  <textarea className="form-control" name= "description" value={this.state.description} onChange={this.onChangeDescription} id="description"  rows="4" required></textarea>
+            </div>
 
-<div className="mb-3">
-<label htmlFor="headline" className="form-label" >headline</label>
-<input type="text" name= "headline" className="form-control" value={this.state.headline} onChange={this.onChangeHeadline} id="headline" required/>
-          </div>
-
-<div className="mb-3">
-<label htmlFor="author" className="form-label">Author</label>
-<input type="text" name= "author" className="form-control" value={this.state.author} onChange={this.onChangeAuthor} id="author" required/>
-          </div>
-          
-<div className="mb-3">
-<label htmlFor="publishedAt" className="form-label">PublishedAt</label>
-<input type="text" name= "publishedAt" className="form-control" value={this.state.publishedAt} onChange={this.onChangePublishedAt}  id="publishedAt" required/>
-</div>
-<div className="mb-3">
-<label htmlFor="url" className="form-label">Url</label>
-<input type="text" name= "url" className="form-control" value={this.state.url} onChange={this.onChangeUrl}  id="url" required/>
-</div>
-<div className="mb-3">
-<label htmlFor="description" className="form-label">Description</label>
-<textarea className="form-control" name= "description" value={this.state.description} onChange={this.onChangeDescription} id="description"  rows="4" required></textarea>
-</div>
-
-<button type="submit"  className="btn btn-primary">Submit</button>
-</form>
-</div>
-              </div>
+            <button type="submit"  className="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
               
 </div>
       
-  </div>
+</div>
     );
 
   }
