@@ -1,0 +1,49 @@
+.nav {
+    height: 71px;
+    box-shadow: 0px 1px 8px #888888;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu {
+    flex: 0.48;
+    position: relative;
+    right: 17%
+    
+  }
+
+  .signup {
+    text-decoration: none;
+    flex: 0.48;
+    position: fixed;
+    left: 90%
+    
+  }
+
+  .link{
+    text-decoration: none;
+  }
+
+  @media only screen and (max-width: 671px){
+    .menu {
+      padding-left: 25px;
+      
+    }
+    
+  }
+  @media only screen and (max-width: 420px){
+    .menu {
+      padding-left: 36px;
+      position: fixed;
+    left: 80%
+      
+    }
+    .signup {
+      flex: 0.48;
+      position: fixed;
+    left: 80%
+      
+    }
+
+    
+  }
