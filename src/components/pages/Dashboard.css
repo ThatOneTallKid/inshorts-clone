@@ -65,11 +65,11 @@
     .signup {
       flex: 0.48;
       position: fixed;
-    left: 50%
+      left: 30%
       
     }
     .form {
-        width: 400px;
+        width: 370px;
        
         margin-left: auto;
         margin-right: auto;

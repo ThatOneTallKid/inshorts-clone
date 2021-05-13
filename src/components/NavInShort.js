@@ -1,10 +1,9 @@
 import React from "react";
 import "./NavInShort.css";
-//import { Link } from "react-router-dom";
-
-
 import HamburgerDrawer from "./HamburgerDrawer";
 import Button from '@material-ui/core/Button';
+
+
 const NavInshort = ({ setCategory }) => {
   return (
     <div className="nav">

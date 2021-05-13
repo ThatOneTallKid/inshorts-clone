@@ -7,7 +7,7 @@ const Login = (props) => {
         <section className="login">
             <div className="loginContainer">
             <label>Username</label>
-            <input type="text" autofocus required 
+            <input type="text" autoFocus required 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             />
