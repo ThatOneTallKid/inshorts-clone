@@ -54,7 +54,6 @@ export default function Signup() {
       switch (error.code) {
         case "auth/invalid-email":
         case "auth/email-in-use":
-        
           setEmailError(error.message);
           break;
         case "auth/weak-password":
