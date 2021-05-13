@@ -7,10 +7,10 @@ import NewsContent from "../NewsContent/NewsContent";
 import axios from "axios";
 
 export default function Home() {
-    const [newsArray, setNewsArray] = useState([]);
+  const [newsArray, setNewsArray] = useState([]);
   const [newsResults, setNewsResults] = useState();
   const [loadMore, setLoadMore] = useState(20);
-    const [category, setCategory] = useState("general");
+  const [category, setCategory] = useState("general");
     
     const NewsApi = async () => {
         try {
